@@ -3,7 +3,8 @@ error_reporting(E_ALL & ~E_NOTICE);
 include 'vendor/autoload.php';
 include 'conststr.php';
 include 'common.php';
-
+//在被请求的网站上，设置HTTP头，添加
+"Access-Control-Allow-Origin: mrxie98.github.io" //值为*或指定的域名
 //echo '<pre>'. json_encode($_SERVER, JSON_PRETTY_PRINT).'</pre>';
 if (isset($_SERVER['USER'])&&$_SERVER['USER']==='qcloud') {
     if (getenv('ONEMANAGER_CONFIG_SAVE')=='file') include 'platform/TencentSCF_file.php';
